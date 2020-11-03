@@ -182,7 +182,7 @@ class FirebaseAuthentication(BaseFirebaseAuthentication):
                     'User is not registered to the application.'
                 )
             username = '_'.join(
-                firebase_user.display_name.split(' ')+str(uuid.uuid4()) if firebase_user.display_name \
+                firebase_user.display_name.split(' '))+str(uuid.uuid4() if firebase_user.display_name \
                 else str(uuid.uuid4())
             )
             username = username if len(username) <= 30 else username[:30]
