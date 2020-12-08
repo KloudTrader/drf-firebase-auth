@@ -185,7 +185,7 @@ class FirebaseAuthentication(BaseFirebaseAuthentication):
                 firebase_user.display_name.split(' ') if firebase_user.display_name \
                 else str(uuid.uuid4())
             )
-            username = username+str(uuid.uuid4()) if len(username) <= 30 else username[:30]
+            username = username+"_"+str(uuid.uuid4()) if len(username) <= 30 else username[:30]
             new_user = User.objects.create_user(
                 username=username,
                 email=email
